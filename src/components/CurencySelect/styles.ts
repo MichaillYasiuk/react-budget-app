@@ -1,11 +1,11 @@
 import { StylesConfig } from 'react-select';
-import { TipsOption } from '../../types/types';
+import { TipsOption } from 'types/types';
 
 export const selectStyles: StylesConfig<TipsOption> = {
   control: (baseStyles, state) => ({
     ...baseStyles,
     border: 'none',
-    borderRadius: '30px',
+    borderRadius: '5px',
     height: '30px',
     width: '120px',
   }),
@@ -26,9 +26,10 @@ export const selectStyles: StylesConfig<TipsOption> = {
   }),
   option: (baseStyles) => ({
     ...baseStyles,
-    width: '100px',
+    width: '50px',
     height: '25px',
     display: 'grid',
     placeItems: 'center',
+    fontSize: '14px',
   }),
 };

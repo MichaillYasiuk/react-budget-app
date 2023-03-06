@@ -7,7 +7,6 @@ const StyledApp = styled.div`
   min-height: 100vh;
   padding: 30px 20px 20px 20px;
   background: no-repeat white;
-  background-position: top left;
 `;
 
 export { StyledApp };

@@ -1,11 +1,9 @@
-import React from 'react';
-import { Subtitle } from '../SpentCard/styles';
-import { StyledSpentCard } from './styles';
+import { StyledSpentCard, CardTitle } from './styles';
 
 export const SpentCard = () => {
   return (
     <StyledSpentCard>
-      <Subtitle>Spent So Far:$3000</Subtitle>
+      <CardTitle>Spent so far: $1000</CardTitle>
     </StyledSpentCard>
   );
 };

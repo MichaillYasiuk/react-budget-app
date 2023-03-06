@@ -1,10 +1,9 @@
-import React from 'react';
-import { AddExpense } from './components/AddExpense/AddExpense';
-import { Budget } from './components/Budget/Budget';
-import { Expenses } from './components/Expenses/Expenses';
-import { StyledApp } from './ui/style';
+import { AddExpense } from 'components/AddExpense/AddExpense';
+import { Budget } from 'components/Budget/Budget';
+import { Expenses } from 'components/Expenses/Expenses';
+import { StyledApp } from './ui/styles';
 
-export const App = () => {
+function App() {
   return (
     <StyledApp>
       <Budget />
@@ -12,4 +11,6 @@ export const App = () => {
       <AddExpense />
     </StyledApp>
   );
-};
+}
+
+export default App;

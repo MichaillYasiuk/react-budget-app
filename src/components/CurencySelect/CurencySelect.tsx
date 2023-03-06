@@ -1,6 +1,5 @@
-import React from 'react';
 import Select from 'react-select';
-import { TipsOption } from '../../types/types';
+import { TipsOption } from 'types/types';
 import { selectStyles } from './styles';
 
 interface SelectProps {

@@ -1,10 +1,9 @@
-import React from 'react';
 import { StyledTitle } from './styles';
 
-interface TitleNameProps {
+interface TitleProps {
   titleName: string;
 }
 
-export const Title = ({ titleName }: TitleNameProps) => {
+export const Title = ({ titleName }: TitleProps) => {
   return <StyledTitle>{titleName}</StyledTitle>;
 };

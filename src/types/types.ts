@@ -1,4 +1,4 @@
 export interface TipsOption {
-  value: number;
+  value: string;
   label: string;
 }

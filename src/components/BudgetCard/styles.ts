@@ -2,17 +2,25 @@ import styled from 'styled-components';
 
 const StyledBudgetCard = styled.div`
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
-  padding: 0 20px;
-  height: 100px;
-  width: 335px;
-  background-color: #7cc6fe;
-  border-radius: 15px;
+  padding: 32px 20px;
+  background: #7cc6fe;
+  border-radius: 10px;
 `;
 
-const Subtitle = styled.h4`
+const CardTitle = styled.h3`
   font-size: 20px;
 `;
 
-export { StyledBudgetCard, Subtitle };
+const Button = styled.button`
+  justify-self: right;
+  padding: 10px 30px;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: none;
+`;
+
+export { StyledBudgetCard, CardTitle, Button };

@@ -1,10 +1,9 @@
-import React from 'react';
-import { StyledRemainingCard, Subtitle } from './styles';
+import { StyledRemainingCard, CardTitle } from './styles';
 
 export const RemainingCard = () => {
   return (
     <StyledRemainingCard>
-      <Subtitle>Remaining:$3000</Subtitle>
+      <CardTitle>Remaining: $2000</CardTitle>
     </StyledRemainingCard>
   );
 };

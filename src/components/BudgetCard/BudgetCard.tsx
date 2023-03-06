@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import { EditButton } from '../EditButton/EditButton';
-import { StyledBudgetCard, Subtitle } from './styles';
+import { StyledBudgetCard, CardTitle, Button } from './styles';
 
 export const BudgetCard = () => {
-  const [isDisabled, setisDisabled] = useState(true);
-
   return (
     <StyledBudgetCard>
-      <Subtitle>Budget:$3000</Subtitle>
-      <EditButton type="button" isDisabled={isDisabled} />
+      <CardTitle>Budget: $3000</CardTitle>
+      <Button>Edit</Button>
     </StyledBudgetCard>
   );
 };

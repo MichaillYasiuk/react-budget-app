@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const StyledExpenseList = styled.form`
-  height: 100%;
+const StyledExpenseList = styled.ul`
+  min-height: 50px;
 `;
 
 export { StyledExpenseList };

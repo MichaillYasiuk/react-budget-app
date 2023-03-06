@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const StyledExpenses = styled.form`
+const StyledExpenses = styled.div`
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 30px;
 `;
 
 export { StyledExpenses };

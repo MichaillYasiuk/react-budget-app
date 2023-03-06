@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-const StyledAddExpense = styled.form`
+const StyledAddExpense = styled.div`
   display: grid;
-  grid-gap: 20px;
-  width: 100%;
+  grid-gap: 30px;
 `;
 
 export { StyledAddExpense };

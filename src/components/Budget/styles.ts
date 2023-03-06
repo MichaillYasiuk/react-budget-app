@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-const StyledBudget = styled.form`
+const StyledBudget = styled.div`
   display: grid;
-  grid-gap: 20px;
-  height: 100%;
+  grid-template-columns: 1fr auto;
+  grid-gap: 30px;
 `;
 
-export { StyledBudget };
+const CardGroup = styled.div`
+  display: grid;
+  grid-column: 1/3;
+  grid-gap: 20px;
+`;
+
+export { StyledBudget, CardGroup };
