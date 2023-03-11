@@ -1,44 +1,67 @@
-import { Button } from 'components/Button/Button';
-import { Input } from 'components/Input/Input';
-import { useExpensesContext } from 'context';
-import { Expense } from 'context/ExpensesContext/types';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { StyledForm, InputGroup } from './styles';
+import { Button } from "../Button/Button";
+import { Title } from "../Title/Title";
+import { AttentionMassage, Input, StyledForm } from "./styles";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useContext } from "react";
+import { ExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
+import { SubmitValue } from "./types";
+import { v4 as uuids4 } from "uuid";
 
 export const Form = () => {
-  const { control, handleSubmit } = useForm({
-    defaultValues: {
-      name: '',
-      cost: '',
-      id: '',
-    },
-  });
+  const { setExpense } = useContext(ExpensesContext);
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors },
+  } = useForm<SubmitValue>();
 
-  const { addNewExpense } = useExpensesContext();
+  const onSubmit: SubmitHandler<SubmitValue> = (expense) => {
+    const newExpense = {
+      ...expense,
+      id: uuids4(),
+    };
 
-  const onSubmit: SubmitHandler<Expense> = (expense) => {
-    addNewExpense(expense);
+    setExpense(newExpense);
+    reset();
   };
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <InputGroup>
-        <Controller
-          name="name"
-          control={control}
-          render={({ field: { ref, ...rest } }) => (
-            <Input placeholder="enter name ..." {...rest} />
-          )}
-        />
-        <Controller
-          name="cost"
-          control={control}
-          render={({ field: { ref, ...rest } }) => (
-            <Input placeholder="enter cost ..." {...rest} />
-          )}
-        />
-      </InputGroup>
-      <Button type="submit" />
+      <Title>Add Expense</Title>
+      <Input
+        type="text"
+        placeholder="enter name ..."
+        {...register("name", {
+          required: "Name is required",
+          maxLength: {
+            value: 15,
+            message: "Name must be less than 15 characters long",
+          },
+          pattern: {
+            value: /[A-Za-z]/,
+            message: "Name must contain only letters",
+          },
+        })}
+      />
+      {errors.name && (
+        <AttentionMassage>{errors.name.message}</AttentionMassage>
+      )}
+      <Input
+        type="number"
+        placeholder="enter cost ..."
+        {...register("cost", {
+          required: "Cost is required",
+          maxLength: {
+            value: 5,
+            message: "Cost must contain only 5 number",
+          },
+        })}
+      />
+      {errors.cost && (
+        <AttentionMassage>{errors.cost.message}</AttentionMassage>
+      )}
+      <Button type="submit">Done</Button>
     </StyledForm>
   );
 };

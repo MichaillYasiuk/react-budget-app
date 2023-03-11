@@ -1,13 +1,16 @@
 import styled from 'styled-components';
+import { Color } from '../../ui/Colors';
 
-const StyledRemainingCard = styled.div`
-  padding: 38px 20px;
-  background: #ccd5ff;
-  border-radius: 10px;
-`;
-
-const CardTitle = styled.h3`
+export const StyledRemaining = styled.div<{ $overspending: boolean }>`
+  display: grid;
+  align-items: center;
+  padding: 0 20px;
+  text-align: left;
+  font-family: Inter;
   font-size: 20px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: ${({ $overspending }) =>
+    $overspending ? Color.Teal : Color.Red};
 `;
-
-export { StyledRemainingCard, CardTitle };

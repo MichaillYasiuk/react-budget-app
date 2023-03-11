@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import { Color } from '../../ui/Colors';
 
-const StyledButton = styled.button`
-  padding: 15px 0;
-  font-size: 16px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #23c9ff;
+export const SubmitButton = styled.button`
+  padding: 15px 0px;
+  background: ${Color.DarkBlue};
   border-radius: 10px;
-  cursor: pointer;
   border: none;
-`;
+  width: 100%;
+  color: ${Color.White};
 
-export { StyledButton };
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+`;

@@ -1,17 +1,11 @@
-import { ReactNode } from 'react';
-
-export interface ExpensesContextValue {
-  expenses: Expense[];
-  addNewExpense: (expense: Expense) => void;
-  deleteExpense: (id: string) => void;
-}
-
-export interface Expense {
-  id: string;
+export interface IExpense {
   name: string;
-  cost: string;
+  cost: number;
+  id: string;
 }
 
-export interface ExpensesContextProviderProps {
-  children: ReactNode;
+export interface IExpensesContext {
+  expenses: IExpense[];
+  setExpense: (expense: IExpense) => void;
+  deleteExpense: (id: string) => void;
 }

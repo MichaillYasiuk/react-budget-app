@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 
-const StyledBudget = styled.div`
+export const StyledBudget = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 30px;
+  gap: 20px;
 `;
 
-const CardGroup = styled.div`
+export const BudgetTitle = styled.div`
   display: grid;
-  grid-column: 1/3;
-  grid-gap: 20px;
+  grid-template-columns: 70% 30%;
 `;
-
-export { StyledBudget, CardGroup };

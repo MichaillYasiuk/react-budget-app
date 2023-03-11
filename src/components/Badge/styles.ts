@@ -1,11 +1,15 @@
 import styled from 'styled-components';
+import { Color } from '../../ui/Colors';
 
-const StyledBadge = styled.span`
-  padding: 3px 14px;
-  font-size: 10px;
-  color: #fff;
-  background-color: #23c9ff;
-  border-radius: 8px;
+export const StyledBadge = styled.span`
+  display: grid;
+  place-items: center;
+  padding: 2px 0px;
+  font-family: Inter;
+  font-size: 12px;
+  border-radius: 10px;
+  width: 60px;
+  height: 20px;
+  background-color: ${Color.DarkBlue};
+  color: ${Color.White};
 `;
-
-export { StyledBadge };

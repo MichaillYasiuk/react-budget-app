@@ -1,38 +1,20 @@
-import { BudgetCard } from 'components/BudgetCard/BudgetCard';
-import { CurencySelect } from 'components/CurencySelect/CurencySelect';
-import { RemainingCard } from 'components/RemainingCard/RemainingCard';
-import { SpentCard } from 'components/SpentCard/SpentCard';
-import { Title } from 'components/Title/Title';
-import { useState } from 'react';
-import { TipsOption } from 'types/types';
-import { StyledBudget, CardGroup } from './styles';
-
-const options: TipsOption[] = [
-  { value: '1', label: 'USD' },
-  { value: '2', label: 'EUR' },
-  { value: '3', label: 'BLR' },
-];
+import { BudgetCard } from '../BudgetCard/BudgetCard';
+import { RemainingCard } from '../RemainingCard/RemainingCard';
+import { CustomSelect } from '../Select/Select';
+import { SpentCard } from '../SpentCard/SpentCard';
+import { Title } from '../Title/Title';
+import { BudgetTitle, StyledBudget } from './styles';
 
 export const Budget = () => {
-  const [selectedValue, setValue] = useState<TipsOption>(options[0]);
-  const onChange = (event: TipsOption | null) => {
-    if (event) {
-      setValue(event);
-    }
-  };
   return (
     <StyledBudget>
-      <Title titleName="Budget App" />
-      <CurencySelect
-        value={selectedValue}
-        onChange={onChange}
-        options={options}
-      ></CurencySelect>
-      <CardGroup>
-        <BudgetCard />
-        <RemainingCard />
-        <SpentCard />
-      </CardGroup>
+      <BudgetTitle>
+        <Title>Budget App</Title>
+        <CustomSelect />
+      </BudgetTitle>
+      <BudgetCard />
+      <RemainingCard />
+      <SpentCard />
     </StyledBudget>
   );
 };

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-const StyledExpenses = styled.div`
+export const StyledExpenses = styled.div`
   display: grid;
-  grid-gap: 30px;
+  gap: 20px;
 `;
-
-export { StyledExpenses };

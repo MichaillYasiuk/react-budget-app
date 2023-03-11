@@ -1,9 +1,9 @@
-import { StyledTitle } from './styles';
+import { StyledTitle } from "./styles";
 
-interface TitleProps {
-  titleName: string;
+interface IProps {
+  children: string;
 }
 
-export const Title = ({ titleName }: TitleProps) => {
-  return <StyledTitle>{titleName}</StyledTitle>;
+export const Title = ({ children }: IProps) => {
+  return <StyledTitle children={children} />;
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const StyledTitle = styled.h2`
+export const StyledTitle = styled.h2`
+  text-align: left;
+  font-family: Inter;
   font-size: 24px;
 `;
-
-export { StyledTitle };

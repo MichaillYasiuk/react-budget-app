@@ -1,26 +1,45 @@
 import styled from 'styled-components';
+import { Color } from '../../ui/Colors';
 
-const StyledBudgetCard = styled.div`
+export const StyledBudgetCard = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 75% 10%;
   align-items: center;
-  padding: 32px 20px;
-  background: #7cc6fe;
-  border-radius: 10px;
-`;
-
-const CardTitle = styled.h3`
+  padding: 0 0 0 20px;
+  font-family: Inter;
   font-size: 20px;
-`;
-
-const Button = styled.button`
-  justify-self: right;
-  padding: 10px 30px;
-  font-size: 14px;
   border-radius: 10px;
-  background-color: #ffffff;
-  cursor: pointer;
-  border: none;
+  width: 100%;
+  height: 100px;
+  background-color: ${Color.Blue};
 `;
 
-export { StyledBudgetCard, CardTitle, Button };
+export const Button = styled.button`
+  padding: 10px 30px;
+  font-family: Inter;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  width: 85px;
+`;
+
+export const Input = styled.input`
+  max-width: 160px;
+  border: none;
+  background-color: ${Color.Blue};
+  :active,
+  :hover,
+  :focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  ::placeholder {
+    text-align: left;
+    font-family: Inter;
+    font-size: 20px;
+    color: ${Color.White};
+  }
+`;
+
+export const Title = styled.span``;

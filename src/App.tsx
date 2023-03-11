@@ -1,16 +1,15 @@
-import { AddExpense } from 'components/AddExpense/AddExpense';
-import { Budget } from 'components/Budget/Budget';
-import { Expenses } from 'components/Expenses/Expenses';
-import { StyledApp } from './ui/styles';
+import { Budget } from './components/Budget/Budget';
+import { ExpensesBlock } from './components/Expenses/Expenses';
+import { Form } from './components/Form/Form';
 
-function App() {
+import { Wrapper } from './ui/styles';
+
+export const App = () => {
   return (
-    <StyledApp>
+    <Wrapper>
       <Budget />
-      <Expenses />
-      <AddExpense />
-    </StyledApp>
+      <ExpensesBlock />
+      <Form />
+    </Wrapper>
   );
-}
-
-export default App;
+};

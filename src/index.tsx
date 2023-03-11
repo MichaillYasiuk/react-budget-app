@@ -1,14 +1,16 @@
-import ReactDOM from 'react-dom/client';
-import { ExpensesContextProvider } from 'context';
-import { GlobalStyles } from './ui/GlobalStyles';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import { GlobalStyles } from "./ui/GlobalStyles";
+import { App } from "./App";
+import { AppContextProvider } from "./context/AppContextProvider";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
-  <ExpensesContextProvider>
-    <GlobalStyles />
-    <App />
-  </ExpensesContextProvider>
+  <>
+    <AppContextProvider>
+      <GlobalStyles />
+      <App />
+    </AppContextProvider>
+  </>
 );

@@ -1,36 +1,35 @@
-import { createContext, useContext, useState } from 'react';
-import { ExpensesContextProviderProps, ExpensesContextValue } from './types';
-import { v4 as uuidv4 } from 'uuid';
+import { createContext, FC, ReactNode, useState } from "react";
+import { IExpensesContext, IExpense } from "./types";
 
-const ExpensesContext = createContext<ExpensesContextValue>({} as ExpensesContextValue);
+export const ExpensesContext = createContext({} as IExpensesContext);
 
-const useExpensesContextValue = () => {
-  const [expensesContext, setExpensesContext] = useState<ExpensesContextValue>(() => {
-    return {
-      expenses: [],
-      addNewExpense: (expense) => {
-        const newExpense = { ...expense, id: uuidv4() };
-        setExpensesContext((ctx) => ({
-          ...ctx,
-          expenses: [...ctx.expenses, newExpense],
-        }));
-      },
-      deleteExpense: (id) => {
-        setExpensesContext((ctx) => ({
-          ...ctx,
-          expenses: [...ctx.expenses.filter((expense) => expense.id !== id)],
-        }));
-      },
-    };
+const useExpensesContext = () => {
+  const [expenseValue, setExpenseValue] = useState<IExpensesContext>({
+    expenses: [],
+
+    setExpense: (newExpenses: IExpense) => {
+      setExpenseValue((ctx) => ({
+        ...ctx,
+        expenses: [...ctx.expenses, newExpenses],
+      }));
+    },
+
+    deleteExpense: (id: string) => {
+      setExpenseValue((ctx) => ({
+        ...ctx,
+        expenses: [...ctx.expenses].filter((expense) => expense.id !== id),
+      }));
+    },
   });
-  return expensesContext;
+
+  return expenseValue;
 };
 
-export const useExpensesContext = () => useContext<ExpensesContextValue>(ExpensesContext);
-
-export const ExpensesContextProvider = ({ children }: ExpensesContextProviderProps) => {
+export const ExpensesContextProvider: FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   return (
-    <ExpensesContext.Provider value={useExpensesContextValue()}>
+    <ExpensesContext.Provider value={useExpensesContext()}>
       {children}
     </ExpensesContext.Provider>
   );

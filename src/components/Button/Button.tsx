@@ -1,8 +1,10 @@
-import { ButtonHTMLAttributes } from 'react';
-import { StyledButton } from './styles';
+import { SubmitButton } from "./styles";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface IButton {
+  type: "button" | "submit" | "reset";
+  children: string;
+}
 
-export const Button = ({ type }: ButtonProps) => {
-  return <StyledButton type={type}>Done</StyledButton>;
+export const Button = ({ type, children }: IButton) => {
+  return <SubmitButton type={type} children={children} />;
 };
